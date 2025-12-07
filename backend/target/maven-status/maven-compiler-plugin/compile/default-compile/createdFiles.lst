@@ -1,0 +1,6 @@
+com\canopy\allocation\AllocationServiceApplication.class
+com\canopy\allocation\model\Models.class
+com\canopy\allocation\service\AllocationService.class
+com\canopy\allocation\model\Models$AllocationRequest.class
+com\canopy\allocation\model\Models$InvestorInput.class
+com\canopy\allocation\controller\AllocationController.class

@@ -1,0 +1,113 @@
+<div class="window">
+  <div class="app-shell layout">
+    <div class="inputs-card">
+      <h2>Inputs</h2>
+
+      <!-- It is shown in left side of Input form-->
+      <div class="inputs-inner">
+        <h3>Total Available Allocation</h3>
+        <div class="field-row">
+          <span class="prefix">$</span>
+          <input
+            type="number"
+            [(ngModel)]="allocationAmount"
+            name="allocationAmount"
+            min="0"
+            step="0.000001"
+            placeholder="Allocation"
+          />
+        </div>
+
+        <!-- Here it shows dynamic investor rows-->
+        <h3>Investor Breakdown</h3>
+
+        <div
+          class="investor-row"
+          *ngFor="let investor of investors; index as i"
+        >
+          <div class="field-row">
+            <span class="icon-box">
+              <mat-icon>person</mat-icon>
+            </span>
+            <input
+              type="text"
+              [(ngModel)]="investor.name"
+              name="name-{{ i }}"
+              placeholder="Name"
+            />
+          </div>
+
+          <div class="field-row">
+            <span class="prefix">$</span>
+            <input
+              type="number"
+              [(ngModel)]="investor.requestedAmount"
+              name="requested-{{ i }}"
+              min="0"
+              step="0.000001"
+              placeholder="Requested Amount"
+            />
+          </div>
+
+          <div class="field-row">
+            <span class="prefix">$</span>
+            <input
+              type="number"
+              [(ngModel)]="investor.averageAmount"
+              name="average-{{ i }}"
+              min="0"
+              step="0.000001"
+              placeholder="Average Amount"
+            />
+          </div>
+
+          <!--Now here remove investor row-->
+          <button
+            type="button"
+            class="remove-btn"
+            (click)="removeInvestor(i)"
+            *ngIf="investors.length > 1"
+          >
+            <mat-icon color="warn">delete</mat-icon>
+          </button>
+        </div>
+        <!-- now here adding the investor, load sample and submit when tey click on button -->
+        <div class="inputs-actions">
+          <button type="button" class="secondary" (click)="addInvestor()">
+            Add Investor
+          </button>
+
+          <button type="button" class="optional" (click)="resetToDefault()">
+            Load sample
+          </button>
+          <button type="button" class="primary" (click)="submit()">
+            {{ loading ? "Prorating…" : "Prorate" }}
+          </button>
+        </div>
+
+        <!--this will display validation errors-->
+        <div *ngIf="error" class="error">
+          {{ error }}
+        </div>
+      </div>
+    </div>
+
+    <!-- this will show the result section of the right side -->
+    <div class="results-card">
+      <h2>Results</h2>
+
+      <!-- this is the placeholder befor api returns results-->
+      <div class="results-box">
+        <div *ngIf="!results.length" class="placeholder">
+          Results will appear here after you prorate.
+        </div>
+
+        <!--it will get the final prorated allocation amount-->
+        <div *ngFor="let row of results" class="result-line">
+          {{ row.name }} -
+          {{ row.amount | currency : "USD" : "symbol" : "1.2-5" }}
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

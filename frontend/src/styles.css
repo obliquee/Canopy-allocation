@@ -1,0 +1,140 @@
+body {
+  margin: 0;
+  background: lightgray;
+}
+
+.inputs-card {
+  flex: 2;
+}
+
+.results-card {
+  flex: 1;
+}
+
+.inputs-card h2,
+.results-card h2 {
+  margin: 0 0 16px;
+}
+
+.inputs-inner {
+  background: lightgray;
+  border-radius: 4px;
+  padding: 24px;
+}
+
+h3 {
+  margin: 0 0 8px;
+  font-size: 14px;
+}
+
+.field-row {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+  background: white;
+  border-radius: 4px;
+  border: 1px solid silver;
+  overflow: hidden;
+}
+
+.field-row input {
+  border: none;
+  padding: 8px 10px;
+  flex: 1;
+  font-size: 14px;
+}
+
+.field-row input:focus {
+  outline: none;
+}
+
+.prefix,
+.icon-box {
+  padding: 0 10px;
+  font-size: 13px;
+  color: slategray;
+  border-right: 1px solid lightgray;
+}
+
+.icon-box {
+  width: 32px;
+  text-align: center;
+}
+
+.investor-row {
+  display: grid;
+  grid-template-columns: 2.2fr 1.4fr 1.4fr auto;
+  gap: 8px;
+  margin-bottom: 8px;
+}
+
+.inputs-actions {
+  margin-top: 16px;
+  display: flex;
+  gap: 8px;
+}
+
+button {
+  border-radius: 4px;
+  border: none;
+  padding: 8px 14px;
+  font-size: 13px;
+  cursor: pointer;
+}
+
+button.primary {
+  background: green;
+  color: white;
+}
+
+button.secondary {
+  background: blue;
+  color: white;
+}
+
+button.optional {
+  background: slateblue;
+  color: white;
+}
+
+.app-shell.layout {
+  max-width: 1060px;
+  margin: 0 auto;
+  background: whitesmoke;
+  border-radius: 0 0 8px 8px;
+  display: flex;
+  padding: 32px;
+  gap: 24px;
+}
+
+.remove-btn {
+  background: transparent;
+  color: darkgray;
+}
+
+.error {
+  margin-top: 10px;
+  color: firebrick;
+  font-size: 13px;
+}
+
+.results-box {
+  border: 1px solid silver;
+  border-radius: 4px;
+  padding: 16px;
+  min-height: 160px;
+  background: white;
+}
+
+.result-line {
+  font-size: 14px;
+  margin-bottom: 6px;
+}
+
+.placeholder {
+  font-size: 13px;
+  color: darkgray;
+}
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
