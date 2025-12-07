@@ -36,7 +36,8 @@ export class AppComponent {
   ];
 
   // This is Backend Calculation API 
-  apiUrl = 'http://localhost:8080/api/allocations/calculate';
+  apiUrl = 'https://canopy-allocation.onrender.com/api/allocations/calculate';
+
 
   loading = false;
   error: string | null = null;
