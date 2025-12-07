@@ -19,6 +19,11 @@ public class AllocationController {
         this.allocationService = allocationService;
     }
 
+    @GetMapping("/ping")
+    public String ping() {
+        return "OK";
+    }
+
     @PostMapping("/calculate")
     // this method handles post request
     // it takes allocation input, validates it, and returns calculated result
