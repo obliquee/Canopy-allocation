@@ -10,7 +10,7 @@ import java.util.Map;
 
 @RestController
 @RequestMapping("/api/allocations") // this is base url for all endpoints
-@CrossOrigin(origins = "http://localhost:4200") // this allows angular frontend to call this API
+@CrossOrigin(origins = "*") // this allows angular frontend to call this API
 public class AllocationController {
 
     private final AllocationService allocationService;
